@@ -3,14 +3,13 @@ import sys
 # 빠른 입력을 위한 코드
 input = sys.stdin.readline
 
-flag = True
 legs = []
 # 입력값 받기
-while flag:
+while True:
     legs.append(list(map(int, input().split())))
     if legs[-1][0] == 0:
-        flag = False
         del legs[-1]
+        break
 
 for i in legs:
     a = sorted(i)[0]
