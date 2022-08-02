@@ -12,11 +12,9 @@ while True:
         break
 
 for i in legs:
-    a = sorted(i)[0]
-    b = sorted(i)[1]
-    c = sorted(i)[2]
+    i.sort()
     # 직각 삼각형 확인 조건 : 가장 큰 변(c)의 제곱이 나머지 변(a, b)의 제곱합과 같다
-    if a**2 + b**2 == c**2:
+    if i[0]**2 + i[1]**2 == i[2]**2:
         print("right")
     else:
         print("wrong")
