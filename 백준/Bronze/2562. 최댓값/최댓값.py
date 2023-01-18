@@ -3,7 +3,12 @@
 numbers = []
 for i in range(9):
     numbers.append(int(input()))
-    
-max = sorted(numbers)[-1]
 
-print(f"{max} {numbers.index(max)+1}")
+max = 0
+idx = 0
+for i in range(9):
+    if(numbers[i] > max):
+        max = numbers[i]
+        idx = i
+
+print(max, idx+1)
