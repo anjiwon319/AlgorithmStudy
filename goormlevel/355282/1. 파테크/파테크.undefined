@@ -1,0 +1,26 @@
+import sys
+
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
+green_onions = list(map(int, input().split()))
+
+left = 0
+right = max(green_onions)
+answer = 0
+
+while left <= right:
+    mid = (left + right) // 2
+
+    total = 0
+    for height in green_onions:
+        if height > mid:
+            total += height - mid
+
+    if total >= M:
+        answer = mid
+        left = mid + 1
+    else:
+        right = mid - 1
+
+print(answer)
